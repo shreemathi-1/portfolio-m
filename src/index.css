@@ -1,0 +1,293 @@
+:root{
+  --paper:#F7F5F0;
+  --paper-alt:#FFFDFA;
+  --ink:#101C2E;
+  --ink-soft:#3D4658;
+  --muted:#6E6A63;
+  --border:#E6E1D8;
+  --border-strong:#CFC8BB;
+  --accent:#1C3D6E;
+  --accent-soft:#E9EEF6;
+  /* Kept under the "verified" name so every seal and proof link across the
+     page retints from here; now the same dark blue as the accent. */
+  --verified:#1C3D6E;
+  --verified-soft:#E9EEF6;
+  --highlight:#B06A10;
+  --highlight-soft:#F7EEDF;
+  --radius:12px;
+  --radius-sm:8px;
+  --max:1120px;
+  --shadow:0 1px 2px rgba(16,28,46,0.04), 0 8px 24px rgba(16,28,46,0.06);
+}
+
+*{box-sizing:border-box;}
+html{scroll-behavior:smooth;}
+body{
+  margin:0;
+  background:var(--paper);
+  color:var(--ink);
+  font-family:'Source Sans 3', sans-serif;
+  font-size:16px;
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+}
+h1,h2,h3,h4{font-family:'Playfair Display', Georgia, serif; margin:0; letter-spacing:-0.015em;}
+p{margin:0;}
+a{color:inherit;text-decoration:none;}
+img{max-width:100%;display:block;}
+button{font-family:inherit;cursor:pointer;}
+.mono{font-family:'JetBrains Mono', monospace;}
+
+.container{max-width:var(--max); margin:0 auto; padding:0 24px;}
+
+/* ---------- Section scaffolding ---------- */
+.section{padding:96px 0;border-top:1px solid var(--border);}
+.section:first-of-type{border-top:none;}
+.section-head{max-width:640px;margin-bottom:56px;}
+.section-eyebrow{
+  display:flex;align-items:center;gap:10px;
+  font-family:'JetBrains Mono', monospace;
+  font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
+  margin-bottom:14px;
+}
+.section-eyebrow .num{
+  display:inline-flex;align-items:center;justify-content:center;
+  width:22px;height:22px;border-radius:50%;border:1px solid var(--accent);
+  font-size:11px;
+}
+.section-head h2{font-size:34px;font-weight:600;margin-bottom:10px;}
+.section-head p{color:var(--muted);font-size:15.5px;}
+
+/* ---------- Signature element: the verified seal ----------
+   Appears next to anything the visitor can independently check:
+   a certificate, a live link, a screenshot, a tracked stat. */
+.seal{
+  display:inline-flex;align-items:center;gap:6px;
+  font-family:'JetBrains Mono', monospace;
+  font-size:11.5px;letter-spacing:.03em;
+  color:var(--verified);
+  background:var(--verified-soft);
+  border:1px solid #C9D5E6;
+  padding:4px 10px 4px 8px;
+  border-radius:20px;
+}
+.seal svg{width:13px;height:13px;flex-shrink:0;}
+
+/* ---------- Buttons ---------- */
+.btn{
+  display:inline-flex;align-items:center;gap:8px;
+  padding:12px 22px;border-radius:8px;font-size:14.5px;font-weight:600;
+  border:1px solid transparent;transition:transform .15s ease, background .15s ease, border-color .15s ease;
+}
+.btn:active{transform:translateY(1px);}
+.btn-primary{background:var(--accent);color:#fff;}
+.btn-primary:hover{background:#15305A;}
+.btn-outline{background:transparent;border-color:var(--border-strong);color:var(--ink);}
+.btn-outline:hover{border-color:var(--ink);}
+.btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.btn-sm{padding:8px 14px;font-size:13px;}
+
+/* ---------- Cards ---------- */
+.card{
+  background:var(--paper-alt);border:1px solid var(--border);border-radius:var(--radius);
+  box-shadow:var(--shadow);
+}
+
+/* ---------- Nav ---------- */
+.navbar{
+  position:fixed;top:0;left:0;right:0;z-index:50;
+  background:rgba(247,245,240,0.86);backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--border);
+}
+.navbar .container{display:flex;align-items:center;justify-content:space-between;height:68px;}
+.nav-brand{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:19px;display:flex;align-items:center;gap:8px;}
+.nav-links{display:flex;gap:26px;align-items:center;}
+.nav-links a{
+  font-size:12.5px;color:var(--ink-soft);font-weight:500;position:relative;padding:4px 0;
+  text-transform:uppercase;letter-spacing:.06em;
+}
+.nav-links a:hover{color:var(--ink);}
+/* Matches ".nav-links a" specificity so the pill's padding actually applies. */
+.nav-links a.nav-cta{
+  background:var(--ink);color:#fff;padding:9px 18px;border-radius:7px;
+  text-transform:none;letter-spacing:0;font-size:13.5px;
+}
+.nav-toggle{display:none;background:none;border:none;font-size:22px;color:var(--ink);}
+
+@media (max-width:860px){
+  .nav-links{
+    position:fixed;top:68px;left:0;right:0;background:var(--paper-alt);
+    flex-direction:column;align-items:flex-start;padding:20px 24px;gap:16px;
+    border-bottom:1px solid var(--border);
+    transform:translateY(-8px);opacity:0;pointer-events:none;transition:all .18s ease;
+  }
+  .nav-links.open{transform:translateY(0);opacity:1;pointer-events:auto;}
+  .nav-toggle{display:block;}
+}
+
+/* ---------- Hero ---------- */
+.hero{padding:158px 0 96px;}
+.hero-grid{display:grid;grid-template-columns:1.25fr 0.8fr;gap:56px;align-items:center;}
+/* Dot-separated role list standing in for the old availability pill. */
+.hero-roles{
+  font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:22px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+}
+.hero-roles .sep{color:var(--border-strong);}
+.hero h1{font-size:62px;line-height:1.05;font-weight:600;margin-bottom:22px;}
+.hero-tagline{font-size:17px;color:var(--ink-soft);max-width:560px;margin-bottom:32px;}
+.hero-expertise-label{
+  font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 12px;
+}
+.hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px;}
+.hero-chip{
+  display:inline-flex;align-items:center;gap:8px;
+  background:var(--paper-alt);border:1px solid var(--border);border-radius:24px;
+  padding:8px 16px;font-size:13.5px;color:var(--ink-soft);
+}
+.chip-dot{width:7px;height:7px;border-radius:50%;flex-shrink:0;}
+.chip-dot.tone-accent{background:var(--accent);}
+.chip-dot.tone-ink{background:var(--ink);}
+.chip-dot.tone-highlight{background:var(--highlight);}
+.chip-dot.tone-muted{background:var(--border-strong);}
+.hero-actions{display:flex;gap:14px;flex-wrap:wrap;margin-bottom:34px;}
+.hero-meta{display:flex;gap:22px;color:var(--muted);font-size:13.5px;flex-wrap:wrap;}
+.hero-meta span{display:flex;align-items:center;gap:6px;}
+/* Circular portrait sitting inside a thin outer ring. */
+.hero-photo-wrap{
+  position:relative;max-width:400px;margin-left:auto;
+  padding:16px;border:1px solid var(--border-strong);border-radius:50%;
+}
+.hero-photo{
+  border-radius:50%;overflow:hidden;border:1px solid var(--border);box-shadow:var(--shadow);
+  aspect-ratio:1/1;
+}
+.hero-photo img{width:100%;height:100%;object-fit:cover;}
+
+/* ---------- Stats bar ---------- */
+.stats-bar{padding:0 0 96px;}
+.stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
+.stat-cell{background:var(--paper-alt);padding:28px 20px;text-align:center;}
+.stat-cell .value{font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:600;color:var(--accent);}
+.stat-cell .label{font-size:13px;color:var(--muted);margin-top:4px;}
+
+/* ---------- About ---------- */
+.about-text p{margin-bottom:16px;color:var(--ink-soft);font-size:15.5px;}
+.about-text p:last-child{margin-bottom:0;}
+
+/* ---------- Skills ---------- */
+.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.skill-group{padding:26px 26px 8px;}
+.skill-group h3{font-size:15px;margin-bottom:18px;color:var(--ink);}
+.skill-row{margin-bottom:16px;}
+.skill-row-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;font-size:13.5px;}
+.skill-row-top .name{font-weight:600;display:flex;align-items:center;gap:8px;}
+.skill-row-top .pct{font-family:'JetBrains Mono',monospace;color:var(--muted);font-size:12px;}
+.skill-bar-track{height:6px;border-radius:4px;background:#F2EEE6;overflow:hidden;}
+.skill-bar-fill{height:100%;background:var(--accent);border-radius:4px;}
+.proof-link{color:var(--verified);font-size:11.5px;display:inline-flex;align-items:center;gap:4px;font-weight:600;}
+.proof-link:hover{text-decoration:underline;}
+
+/* ---------- Tech badges ---------- */
+.badges-row{display:flex;flex-wrap:wrap;gap:10px;}
+.badges-row img{height:28px;border-radius:5px;}
+
+/* ---------- Projects ---------- */
+.projects-list{display:flex;flex-direction:column;gap:28px;}
+.project-card{overflow:hidden;}
+.project-card-inner{display:grid;grid-template-columns:1.1fr 1fr;}
+.project-gallery{position:relative;background:#F2EEE6;}
+.project-gallery img, .project-gallery video{width:100%;height:100%;object-fit:cover;display:block;min-height:260px;}
+.gallery-dots{position:absolute;bottom:14px;left:50%;transform:translateX(-50%);display:flex;gap:6px;}
+.gallery-dots button{width:7px;height:7px;border-radius:50%;background:rgba(255,255,255,.55);border:none;padding:0;}
+.gallery-dots button.active{background:#fff;}
+.gallery-nav{position:absolute;top:50%;transform:translateY(-50%);background:rgba(23,27,38,.55);color:#fff;border:none;width:30px;height:30px;border-radius:50%;display:flex;align-items:center;justify-content:center;}
+.gallery-nav.prev{left:10px;}
+.gallery-nav.next{right:10px;}
+.project-body{padding:30px 32px;display:flex;flex-direction:column;}
+.project-featured-tag{
+  align-self:flex-start;font-size:11px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;
+  color:var(--highlight);background:var(--highlight-soft);padding:4px 10px;border-radius:20px;margin-bottom:12px;
+}
+.project-body h3{font-size:21px;margin-bottom:6px;}
+.project-tagline{color:var(--ink-soft);font-size:14.5px;margin-bottom:12px;}
+.project-desc{color:var(--muted);font-size:14px;margin-bottom:18px;}
+.project-tech{display:flex;flex-wrap:wrap;gap:6px;margin-bottom:20px;}
+.tech-pill{font-size:11.5px;background:var(--paper);border:1px solid var(--border);padding:4px 10px;border-radius:20px;color:var(--ink-soft);}
+.project-links{display:flex;gap:10px;margin-top:auto;flex-wrap:wrap;}
+
+/* ---------- Internships & Achievements ---------- */
+.internship-card{display:grid;grid-template-columns:220px 1fr;overflow:hidden;}
+.internship-photo{background:#F2EEE6;min-height:100%;}
+.internship-photo img{width:100%;height:100%;object-fit:cover;}
+.internship-body{padding:28px 30px;}
+.internship-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:8px;}
+.internship-head h3{font-size:19px;}
+.internship-role{color:var(--accent);font-size:14px;font-weight:600;margin-bottom:2px;}
+.internship-duration{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);white-space:nowrap;}
+.internship-desc{color:var(--ink-soft);font-size:14px;margin:12px 0 16px;}
+
+.achievements-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.achievement-card{overflow:hidden;}
+.achievement-photo{aspect-ratio:5/4;background:#F2EEE6;}
+.achievement-photo img{width:100%;height:100%;object-fit:cover;}
+.achievement-body{padding:18px 20px;}
+.achievement-year{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);}
+.achievement-body h3{font-size:15.5px;margin:4px 0 6px;}
+.achievement-body p{font-size:13.5px;color:var(--muted);}
+
+/* ---------- Tracking ---------- */
+.tracking-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
+.tracking-card{padding:22px;}
+.tracking-card-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:16px;}
+.tracking-card-head h3{font-size:15px;}
+.tracking-card img{width:100%;border-radius:8px;}
+.tracking-note{font-size:12px;color:var(--muted);margin-top:10px;}
+
+/* ---------- Contact ---------- */
+.contact-card{padding:52px;text-align:center;}
+.contact-card h2{font-size:30px;margin-bottom:12px;}
+.contact-card p{color:var(--ink-soft);max-width:560px;margin:0 auto 28px;}
+.contact-links{display:flex;justify-content:center;gap:14px;flex-wrap:wrap;}
+
+/* ---------- Lightbox (proof viewer) ---------- */
+.lightbox{
+  position:fixed;inset:0;background:rgba(23,27,38,.62);backdrop-filter:blur(2px);
+  display:flex;align-items:center;justify-content:center;z-index:100;padding:24px;
+}
+.lightbox-inner{background:var(--paper-alt);border-radius:var(--radius);max-width:640px;width:100%;overflow:hidden;}
+.lightbox-head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--border);}
+.lightbox-close{background:none;border:none;font-size:18px;color:var(--muted);}
+.lightbox-inner img{width:100%;}
+
+/* ---------- Footer ---------- */
+.footer{padding:36px 0;border-top:1px solid var(--border);}
+.footer .container{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:12px;}
+.footer p{font-size:13px;color:var(--muted);}
+.footer-links{display:flex;gap:16px;}
+.footer-links a{color:var(--muted);}
+.footer-links a:hover{color:var(--ink);}
+
+/* ---------- Responsive ---------- */
+@media (max-width:900px){
+  .hero-grid{grid-template-columns:1fr;}
+  .hero-photo-wrap{max-width:320px;margin:0 auto;}
+  .project-card-inner{grid-template-columns:1fr;}
+  .internship-card{grid-template-columns:1fr;}
+  .internship-photo{aspect-ratio:16/9;}
+  .skills-grid{grid-template-columns:1fr;}
+  .tracking-grid{grid-template-columns:1fr;}
+  .achievements-grid{grid-template-columns:1fr 1fr;}
+}
+@media (max-width:600px){
+  .hero h1{font-size:42px;}
+  .stats-grid{grid-template-columns:1fr 1fr;}
+  .achievements-grid{grid-template-columns:1fr;}
+  .section{padding:64px 0;}
+  .contact-card{padding:32px 22px;}
+}
+
+@media (prefers-reduced-motion: reduce){
+  *{animation:none !important;transition:none !important;}
+}
