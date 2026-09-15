@@ -3,7 +3,6 @@ import Hero from './components/Hero'
 import StatsBar from './components/StatsBar'
 import About from './components/About'
 import Skills from './components/Skills'
-import TechBadges from './components/TechBadges'
 import Projects from './components/Projects'
 import Internships from './components/Internships'
 import Achievements from './components/Achievements'
@@ -17,7 +16,6 @@ export default function App() {
       <Navbar />
       <Hero />
       <StatsBar />
-      <TechBadges />
       <About />
       <Skills />
       <Projects />

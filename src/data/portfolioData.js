@@ -90,21 +90,6 @@ export const skillGroups = [
   },
 ];
 
-// Flat badge list rendered as shields.io technology badges.
-// "slug" must match a simple-icons slug (https://simpleicons.org/).
-export const techBadges = [
-  { name: "React", slug: "react", color: "20232A", logoColor: "61DAFB" },
-  { name: "JavaScript", slug: "javascript", color: "323330", logoColor: "F7DF1E" },
-  { name: "Node.js", slug: "node.js", color: "303030", logoColor: "339933" },
-  { name: "Python", slug: "python", color: "2b2b2b", logoColor: "3776AB" },
-  { name: "MongoDB", slug: "mongodb", color: "1a1a1a", logoColor: "47A248" },
-  { name: "Tailwind CSS", slug: "tailwindcss", color: "1a1a1a", logoColor: "06B6D4" },
-  { name: "Git", slug: "git", color: "2b2b2b", logoColor: "F05032" },
-  { name: "Docker", slug: "docker", color: "1a1a1a", logoColor: "2496ED" },
-  { name: "PostgreSQL", slug: "postgresql", color: "2b2b2b", logoColor: "4169E1" },
-  { name: "Figma", slug: "figma", color: "1a1a1a", logoColor: "F24E1E" },
-];
-
 // Each project can include a gallery of screenshots and/or a demo video.
 export const projects = [
   {

@@ -129,11 +129,24 @@ button{font-family:inherit;cursor:pointer;}
 .hero{padding:158px 0 96px;}
 .hero-grid{display:grid;grid-template-columns:1.25fr 0.8fr;gap:56px;align-items:center;}
 /* Dot-separated role list standing in for the old availability pill. */
-.hero-roles{
-  font-family:'JetBrains Mono',monospace;font-size:12px;letter-spacing:.1em;text-transform:uppercase;
-  color:var(--accent);margin-bottom:22px;display:flex;align-items:center;gap:10px;flex-wrap:wrap;
+.hero-roles {
+  /* Switched to a robust system monospace stack */
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 12px;
+  letter-spacing: .1em;
+  text-transform: uppercase;
+  color: var(--accent);
+  margin-bottom: 22px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+  
+  /* This will now work perfectly */
+  font-weight: 700; 
 }
-.hero-roles .sep{color:var(--border-strong);}
+
+.hero-roles .sep{color:var(--border-strong); }
 .hero h1{font-size:62px;line-height:1.05;font-weight:600;margin-bottom:22px;}
 .hero-tagline{font-size:17px;color:var(--ink-soft);max-width:560px;margin-bottom:32px;}
 .hero-expertise-label{
@@ -190,8 +203,6 @@ button{font-family:inherit;cursor:pointer;}
 .proof-link:hover{text-decoration:underline;}
 
 /* ---------- Tech badges ---------- */
-.badges-row{display:flex;flex-wrap:wrap;gap:10px;}
-.badges-row img{height:28px;border-radius:5px;}
 
 /* ---------- Projects ---------- */
 .projects-list{display:flex;flex-direction:column;gap:28px;}
