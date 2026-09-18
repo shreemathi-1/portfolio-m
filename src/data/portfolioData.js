@@ -42,50 +42,94 @@ export const coreExpertise = [
   { name: "REST APIs", tone: "highlight" },
 ];
 
-export const stats = [
-  { value: "15+", label: "Projects shipped" },
-  { value: "2+", label: "Years learning" },
-  { value: "100%", label: "Responsive designs" },
-  { value: "∞", label: "Learning" },
+
+// The three areas the About section highlights, each with an icon tile.
+export const focusAreas = [
+  { icon: "🧩", label: "Full-Stack Web Development" },
+  { icon: "⚡", label: "Performance & Clean Code" },
+  { icon: "☁️", label: "Cloud & DevOps Fundamentals" },
 ];
 
-// Skills grouped by category. Each skill can optionally carry "proof" —
-// a screenshot, certificate or short clip that backs up the claim.
+// Shown as the Education column beside the About text.
+export const education = [
+  {
+    id: "edu-1",
+    degree: "B.E. Computer Science & Engineering",
+    institution: "Sample Institute of Technology",
+    years: "2022–2026",
+    score: "CGPA: 8.6",
+  },
+  {
+    id: "edu-2",
+    degree: "Higher Secondary Certificate (HSC)",
+    institution: "Sample Higher Secondary School",
+    years: "2021–2022",
+    score: "91%",
+  },
+  {
+    id: "edu-3",
+    degree: "Secondary School Leaving Certificate (SSLC)",
+    institution: "Sample Vidya Mandir",
+    years: "2019–2020",
+    score: "94%",
+  },
+];
+
+// Skills grouped by category. Each group gets an icon for its card.
+// "proof" is a screenshot, certificate or short video clip backing the skill —
+// an .mp4/.webm/.mov opens as a video, anything else as an image. null means
+// nothing is uploaded yet.
 export const skillGroups = [
   {
-    category: "Languages",
+    category: "Programming Languages",
+    icon: "💻",
     skills: [
-      { name: "JavaScript", level: 85, proof: null },
-      { name: "Python", level: 80, proof: null },
-      { name: "Java", level: 65, proof: null },
-      { name: "SQL", level: 75, proof: null },
+      { name: "JavaScript", proof: null },
+      { name: "Python", proof: null },
+      { name: "Java", proof: null },
+      { name: "SQL", proof: null },
     ],
   },
   {
     category: "Frontend",
+    icon: "🎨",
     skills: [
-      { name: "React", level: 85, proof: "/assets/placeholders/certificate-placeholder.svg" },
-      { name: "HTML / CSS", level: 90, proof: null },
-      { name: "Tailwind CSS", level: 80, proof: null },
-      { name: "Redux", level: 70, proof: null },
+      { name: "React", proof: "/assets/placeholders/certificate-placeholder.svg" },
+      { name: "HTML / CSS", proof: null },
+      { name: "Tailwind CSS", proof: null },
+      { name: "Redux", proof: null },
     ],
   },
   {
-    category: "Backend & Data",
+    category: "Backend & APIs",
+    icon: "⚙️",
     skills: [
-      { name: "Node.js / Express", level: 78, proof: null },
-      { name: "MongoDB", level: 75, proof: null },
-      { name: "REST APIs", level: 82, proof: null },
-      { name: "PostgreSQL", level: 60, proof: null },
+      { name: "Node.js / Express", proof: null },
+      { name: "REST APIs", proof: null },
     ],
   },
   {
-    category: "Tools & Platforms",
+    category: "Databases",
+    icon: "🗄️",
     skills: [
-      { name: "Git & GitHub", level: 88, proof: null },
-      { name: "Docker (basics)", level: 55, proof: null },
-      { name: "AWS (basics)", level: 50, proof: "/assets/placeholders/certificate-placeholder.svg" },
-      { name: "Figma", level: 65, proof: null },
+      { name: "MongoDB", proof: null },
+      { name: "PostgreSQL", proof: null },
+    ],
+  },
+  {
+    category: "Tools & Workflow",
+    icon: "🛠️",
+    skills: [
+      { name: "Git & GitHub", proof: null },
+      { name: "Figma", proof: null },
+    ],
+  },
+  {
+    category: "Cloud & DevOps",
+    icon: "☁️",
+    skills: [
+      { name: "Docker (basics)", proof: null },
+      { name: "AWS (basics)", proof: "/assets/placeholders/certificate-placeholder.svg" },
     ],
   },
 ];
@@ -153,16 +197,25 @@ export const projects = [
   },
 ];
 
+// Rendered as the Experience timeline. "highlights" are the arrow bullets;
+// "photo" is kept for reference but the timeline layout does not display it.
 export const internships = [
   {
     id: "internship-1",
     company: "NimbusTech Solutions",
     role: "Frontend Developer Intern",
     duration: "May 2025 – Jul 2025",
+    length: "3 months",
+    location: "Bengaluru, India",
     photo: "/assets/placeholders/photo-placeholder.svg",
     certificate: "/assets/placeholders/certificate-placeholder.svg",
     description:
-      "Rebuilt the client dashboard in React, cutting first-load time by 40% through code-splitting and lazy-loaded routes. Paired with two senior engineers on a component library adopted across three product teams.",
+      "Three months on the product team, working across the client-facing dashboard and the shared component library.",
+    highlights: [
+      "Rebuilt the client dashboard in React, cutting first-load time by 40% through code-splitting and lazy-loaded routes",
+      "Paired with two senior engineers on a component library adopted across three product teams",
+      "Documented every shared component in Storybook with typed props",
+    ],
     tech: ["React", "TypeScript", "Storybook"],
   },
   {
@@ -170,11 +223,66 @@ export const internships = [
     company: "Verve Analytics",
     role: "Data & Backend Intern",
     duration: "Dec 2024 – Feb 2025",
+    length: "3 months",
+    location: "Remote",
     photo: "/assets/placeholders/photo-placeholder.svg",
     certificate: "/assets/placeholders/certificate-placeholder.svg",
     description:
-      "Built internal REST APIs for a reporting tool used by 5 analysts daily, and wrote data-cleaning scripts that reduced manual spreadsheet work by roughly 6 hours a week.",
+      "A backend-leaning internship on the internal reporting stack used by the analytics team.",
+    highlights: [
+      "Built internal REST APIs for a reporting tool used by 5 analysts daily",
+      "Wrote data-cleaning scripts that reduced manual spreadsheet work by roughly 6 hours a week",
+      "Worked in Python and Flask against a PostgreSQL warehouse",
+    ],
     tech: ["Python", "Flask", "PostgreSQL"],
+  },
+];
+
+// Certifications gallery. "image" is the certificate picture itself —
+// drop the real file in /public/assets and point at it here. These entries are
+// sample placeholders: replace the titles, issuers and dates with your own.
+export const certifications = [
+  {
+    id: "cert-1",
+    title: "Responsive Web Design",
+    issuer: "freeCodeCamp",
+    date: "March 2025",
+    image: "/assets/placeholders/certificate-placeholder.svg",
+  },
+  {
+    id: "cert-2",
+    title: "React — The Complete Guide",
+    issuer: "Udemy",
+    date: "January 2025",
+    image: "/assets/placeholders/certificate-placeholder.svg",
+  },
+  {
+    id: "cert-3",
+    title: "Python for Everybody",
+    issuer: "Coursera",
+    date: "November 2024",
+    image: "/assets/placeholders/certificate-placeholder.svg",
+  },
+  {
+    id: "cert-4",
+    title: "AWS Cloud Practitioner Essentials",
+    issuer: "AWS Skill Builder",
+    date: "August 2024",
+    image: "/assets/placeholders/certificate-placeholder.svg",
+  },
+  {
+    id: "cert-5",
+    title: "Git & GitHub Fundamentals",
+    issuer: "Sample Academy",
+    date: "May 2024",
+    image: "/assets/placeholders/certificate-placeholder.svg",
+  },
+  {
+    id: "cert-6",
+    title: "SQL for Data Analysis",
+    issuer: "Sample Academy",
+    date: "February 2024",
+    image: "/assets/placeholders/certificate-placeholder.svg",
   },
 ];
 
@@ -203,13 +311,42 @@ export const achievements = [
 ];
 
 // Used to embed the free, public GitHub / LeetCode stat-card services.
+// Events and workshops attended, shown under Highlights. "image" is the
+// participation certificate. These are sample placeholders — replace them.
+export const workshops = [
+  {
+    id: "ws-1",
+    title: "Hands-on Workshop on Modern React Patterns",
+    organiser: "Sample Institute of Technology · Dept. of Computer Science",
+    format: "2-Day Workshop",
+    date: "Aug 12–13, 2025",
+    image: "/assets/placeholders/certificate-placeholder.svg",
+  },
+  {
+    id: "ws-2",
+    title: "Cloud Fundamentals Bootcamp",
+    organiser: "Sample Tech Community · Bengaluru Chapter",
+    format: "1-Day Bootcamp",
+    date: "Apr 6, 2025",
+    image: "/assets/placeholders/certificate-placeholder.svg",
+  },
+  {
+    id: "ws-3",
+    title: "Open Source Contribution Sprint",
+    organiser: "Sample Academy · Student Developer Program",
+    format: "Weekend Program",
+    date: "Nov 23–24, 2024",
+    image: "/assets/placeholders/certificate-placeholder.svg",
+  },
+];
+
 export const tracking = {
   githubUsername: "ananyarao",
   leetcodeUsername: "ananyarao",
 };
 
 export const contact = {
-  heading: "Let's talk",
+  heading: "Let's connect",
   message:
     "I'm actively looking for a full-time or internship role as a fresher developer. The fastest way to reach me is email or LinkedIn — I reply within a day.",
 };

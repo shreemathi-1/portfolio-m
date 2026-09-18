@@ -2,45 +2,53 @@ import { useState } from 'react'
 import SectionReveal from './SectionReveal'
 import Seal from './Seal'
 import { internships } from '../data/portfolioData'
-import { FiX } from 'react-icons/fi'
+import { FiX, FiFileText } from 'react-icons/fi'
 
 export default function Internships() {
   const [cert, setCert] = useState(null)
 
   return (
-    <section className="section" id="internships">
+    <section className="section" id="experience">
       <div className="container">
         <SectionReveal className="section-head">
-          <p className="section-eyebrow"><span className="num">04</span> Internships</p>
-          <h2>Where I've worked</h2>
+          <p className="section-eyebrow"><span className="num">04</span> Professional Experience</p>
+          <h2>Internships</h2>
         </SectionReveal>
 
-        <div className="projects-list">
+        <div className="timeline">
           {internships.map((it) => (
-            <SectionReveal key={it.id} className="card internship-card">
-              <div className="internship-photo">
-                <img src={it.photo} alt={`${it.company} team photo`} />
+            <SectionReveal key={it.id} className="timeline-item">
+              <span className="timeline-marker" aria-hidden="true" />
+
+              <p className="timeline-meta">
+                {[it.duration, it.length, it.location].filter(Boolean).map((part, i) => (
+                  <span key={part}>
+                    {i > 0 && <span className="sep">&nbsp;·&nbsp;</span>}
+                    {part}
+                  </span>
+                ))}
+              </p>
+
+              <h3 className="timeline-title">{it.role} — {it.company}</h3>
+              <p className="timeline-desc">{it.description}</p>
+
+              <ul className="timeline-points">
+                {it.highlights.map((h) => (
+                  <li key={h}>{h}</li>
+                ))}
+              </ul>
+
+              <div className="project-tech timeline-tech">
+                {it.tech.map((t) => (
+                  <span className="tech-pill" key={t}>{t}</span>
+                ))}
               </div>
-              <div className="internship-body">
-                <div className="internship-head">
-                  <div>
-                    <h3>{it.company}</h3>
-                    <p className="internship-role">{it.role}</p>
-                  </div>
-                  <span className="internship-duration mono">{it.duration}</span>
-                </div>
-                <p className="internship-desc">{it.description}</p>
-                <div className="project-tech" style={{ marginBottom: 16 }}>
-                  {it.tech.map((t) => (
-                    <span className="tech-pill" key={t}>{t}</span>
-                  ))}
-                </div>
-                <div className="project-links">
-                  <button className="btn btn-outline btn-sm" onClick={() => setCert(it)}>
-                    View certificate
-                  </button>
-                  <Seal>Certificate verified</Seal>
-                </div>
+
+              <div className="project-links">
+                <button className="btn btn-outline btn-sm" onClick={() => setCert(it)}>
+                  <FiFileText /> View Internship Certificate
+                </button>
+              
               </div>
             </SectionReveal>
           ))}

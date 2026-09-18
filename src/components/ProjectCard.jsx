@@ -54,7 +54,7 @@ export default function ProjectCard({ project }) {
                 <FaGithub /> Source
               </a>
             )}
-            {project.live && <Seal>Live &amp; verifiable</Seal>}
+           
           </div>
         </div>
       </div>

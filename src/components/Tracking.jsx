@@ -9,7 +9,7 @@ export default function Tracking() {
     <section className="section" id="tracking">
       <div className="container">
         <SectionReveal className="section-head">
-          <p className="section-eyebrow"><span className="num">06</span> Tracking</p>
+          <p className="section-eyebrow"><span className="num">07</span> Tracking</p>
           <h2>Live coding activity</h2>
           <p>Pulled live from GitHub and LeetCode — not a static screenshot, so it stays current on its own.</p>
         </SectionReveal>

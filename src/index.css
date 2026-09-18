@@ -26,17 +26,17 @@ body{
   margin:0;
   background:var(--paper);
   color:var(--ink);
-  font-family:'Source Sans 3', sans-serif;
+  font-family:'DM Sans', sans-serif;
   font-size:16px;
   line-height:1.6;
   -webkit-font-smoothing:antialiased;
 }
-h1,h2,h3,h4{font-family:'Playfair Display', Georgia, serif; margin:0; letter-spacing:-0.015em;}
+h1,h2,h3,h4{font-family:'Cormorant Garamond',serif; margin:0;}
 p{margin:0;}
 a{color:inherit;text-decoration:none;}
 img{max-width:100%;display:block;}
 button{font-family:inherit;cursor:pointer;}
-.mono{font-family:'JetBrains Mono', monospace;}
+.mono{font-family:'DM Sans',sans-serif;}
 
 .container{max-width:var(--max); margin:0 auto; padding:0 24px;}
 
@@ -46,7 +46,7 @@ button{font-family:inherit;cursor:pointer;}
 .section-head{max-width:640px;margin-bottom:56px;}
 .section-eyebrow{
   display:flex;align-items:center;gap:10px;
-  font-family:'JetBrains Mono', monospace;
+  font-family:'DM Sans',sans-serif;
   font-size:12.5px;letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
   margin-bottom:14px;
 }
@@ -55,7 +55,7 @@ button{font-family:inherit;cursor:pointer;}
   width:22px;height:22px;border-radius:50%;border:1px solid var(--accent);
   font-size:11px;
 }
-.section-head h2{font-size:34px;font-weight:600;margin-bottom:10px;}
+.section-head h2{font-size:clamp(32px,4vw,48px);line-height:1.1;font-weight:700;margin-bottom:10px;}
 .section-head p{color:var(--muted);font-size:15.5px;}
 
 /* ---------- Signature element: the verified seal ----------
@@ -63,7 +63,7 @@ button{font-family:inherit;cursor:pointer;}
    a certificate, a live link, a screenshot, a tracked stat. */
 .seal{
   display:inline-flex;align-items:center;gap:6px;
-  font-family:'JetBrains Mono', monospace;
+  font-family:'DM Sans',sans-serif;
   font-size:11.5px;letter-spacing:.03em;
   color:var(--verified);
   background:var(--verified-soft);
@@ -100,7 +100,7 @@ button{font-family:inherit;cursor:pointer;}
   border-bottom:1px solid var(--border);
 }
 .navbar .container{display:flex;align-items:center;justify-content:space-between;height:68px;}
-.nav-brand{font-family:'Playfair Display',Georgia,serif;font-weight:600;font-size:19px;display:flex;align-items:center;gap:8px;}
+.nav-brand{font-family:'Cormorant Garamond',serif;font-weight:700;font-size:22px;display:flex;align-items:center;gap:8px;}
 .nav-links{display:flex;gap:26px;align-items:center;}
 .nav-links a{
   font-size:12.5px;color:var(--ink-soft);font-weight:500;position:relative;padding:4px 0;
@@ -130,8 +130,7 @@ button{font-family:inherit;cursor:pointer;}
 .hero-grid{display:grid;grid-template-columns:1.25fr 0.8fr;gap:56px;align-items:center;}
 /* Dot-separated role list standing in for the old availability pill. */
 .hero-roles {
-  /* Switched to a robust system monospace stack */
-  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-family:'DM Sans',sans-serif;
   font-size: 12px;
   letter-spacing: .1em;
   text-transform: uppercase;
@@ -147,10 +146,10 @@ button{font-family:inherit;cursor:pointer;}
 }
 
 .hero-roles .sep{color:var(--border-strong); }
-.hero h1{font-size:62px;line-height:1.05;font-weight:600;margin-bottom:22px;}
+.hero h1{font-size:clamp(52px,6.5vw,88px);line-height:1;font-weight:700;margin-bottom:22px;}
 .hero-tagline{font-size:17px;color:var(--ink-soft);max-width:560px;margin-bottom:32px;}
 .hero-expertise-label{
-  font-family:'JetBrains Mono',monospace;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  font-family:'DM Sans',sans-serif;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
   color:var(--muted);margin:0 0 12px;
 }
 .hero-chips{display:flex;flex-wrap:wrap;gap:10px;margin-bottom:30px;}
@@ -182,25 +181,61 @@ button{font-family:inherit;cursor:pointer;}
 .stats-bar{padding:0 0 96px;}
 .stats-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--border);border:1px solid var(--border);border-radius:var(--radius);overflow:hidden;}
 .stat-cell{background:var(--paper-alt);padding:28px 20px;text-align:center;}
-.stat-cell .value{font-family:'JetBrains Mono',monospace;font-size:30px;font-weight:600;color:var(--accent);}
+.stat-cell .value{font-family:'DM Sans',sans-serif;font-size:30px;font-weight:600;color:var(--accent);}
 .stat-cell .label{font-size:13px;color:var(--muted);margin-top:4px;}
 
 /* ---------- About ---------- */
+.about-grid{display:grid;grid-template-columns:1.15fr 0.85fr;gap:56px;align-items:start;}
 .about-text p{margin-bottom:16px;color:var(--ink-soft);font-size:15.5px;}
-.about-text p:last-child{margin-bottom:0;}
+.about-text p:last-of-type{margin-bottom:0;}
+/* Focus areas: icon tile + label, under the About copy. */
+.focus-list{list-style:none;margin:34px 0 0;padding:0;display:flex;flex-direction:column;gap:14px;}
+.focus-item{display:flex;align-items:center;gap:14px;font-size:15px;font-weight:500;color:var(--ink);}
+.focus-icon{
+  width:38px;height:38px;border-radius:10px;flex-shrink:0;
+  background:var(--accent-soft);border:1px solid var(--border);
+  display:inline-flex;align-items:center;justify-content:center;font-size:17px;line-height:1;
+}
+.about-col-label{
+  font-family:'DM Sans',sans-serif;font-size:11.5px;letter-spacing:.1em;text-transform:uppercase;
+  color:var(--muted);margin:0 0 16px;
+}
+.edu-list{display:flex;flex-direction:column;gap:16px;}
+.edu-card{
+  background:var(--paper-alt);border:1px solid var(--border);border-left:3px solid var(--accent);
+  border-radius:var(--radius-sm);padding:20px 22px;box-shadow:var(--shadow);
+}
+.edu-card h3{font-size:16.5px;font-weight:600;margin-bottom:6px;line-height:1.25;}
+.edu-meta{font-size:14px;color:var(--muted);margin-bottom:6px;}
+.edu-score{font-size:13px;color:var(--accent);font-weight:600;}
 
 /* ---------- Skills ---------- */
-.skills-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:24px;}
-.skill-group{padding:26px 26px 8px;}
-.skill-group h3{font-size:15px;margin-bottom:18px;color:var(--ink);}
-.skill-row{margin-bottom:16px;}
-.skill-row-top{display:flex;justify-content:space-between;align-items:center;margin-bottom:6px;font-size:13.5px;}
-.skill-row-top .name{font-weight:600;display:flex;align-items:center;gap:8px;}
-.skill-row-top .pct{font-family:'JetBrains Mono',monospace;color:var(--muted);font-size:12px;}
-.skill-bar-track{height:6px;border-radius:4px;background:#F2EEE6;overflow:hidden;}
-.skill-bar-fill{height:100%;background:var(--accent);border-radius:4px;}
-.proof-link{color:var(--verified);font-size:11.5px;display:inline-flex;align-items:center;gap:4px;font-weight:600;}
-.proof-link:hover{text-decoration:underline;}
+.skills-cards{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.skill-card{padding:28px 26px;display:flex;flex-direction:column;}
+.skill-card-icon{font-size:26px;line-height:1;margin-bottom:18px;}
+.skill-card-title{
+  font-family:'DM Sans',sans-serif;font-size:12.5px;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--accent);margin-bottom:16px;
+}
+/* One skill per line, each with its own POC button. */
+.skill-list{display:flex;flex-direction:column;}
+.skill-line{
+  display:flex;align-items:center;justify-content:space-between;gap:12px;
+  padding:11px 0;border-bottom:1px solid var(--border);
+}
+.skill-line:first-child{padding-top:0;}
+.skill-line:last-child{border-bottom:none;padding-bottom:0;}
+.skill-line-name{font-size:14.5px;font-weight:500;color:var(--ink);}
+.poc-btn{
+  display:inline-flex;align-items:center;gap:6px;flex-shrink:0;
+  font-family:'DM Sans',sans-serif;font-size:11px;font-weight:600;letter-spacing:.03em;
+  color:var(--accent);background:var(--accent-soft);border:1px solid #C9D5E6;
+  border-radius:20px;padding:5px 11px;
+  transition:background .15s ease, border-color .15s ease;
+}
+.poc-btn:hover{background:#DBE5F3;border-color:var(--accent);}
+.poc-btn:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.poc-btn svg{width:12px;height:12px;flex-shrink:0;}
 
 /* ---------- Tech badges ---------- */
 
@@ -228,23 +263,71 @@ button{font-family:inherit;cursor:pointer;}
 .tech-pill{font-size:11.5px;background:var(--paper);border:1px solid var(--border);padding:4px 10px;border-radius:20px;color:var(--ink-soft);}
 .project-links{display:flex;gap:10px;margin-top:auto;flex-wrap:wrap;}
 
-/* ---------- Internships & Achievements ---------- */
-.internship-card{display:grid;grid-template-columns:220px 1fr;overflow:hidden;}
-.internship-photo{background:#F2EEE6;min-height:100%;}
-.internship-photo img{width:100%;height:100%;object-fit:cover;}
-.internship-body{padding:28px 30px;}
-.internship-head{display:flex;justify-content:space-between;align-items:flex-start;flex-wrap:wrap;gap:10px;margin-bottom:8px;}
-.internship-head h3{font-size:19px;}
-.internship-role{color:var(--accent);font-size:14px;font-weight:600;margin-bottom:2px;}
-.internship-duration{font-family:'JetBrains Mono',monospace;font-size:12px;color:var(--muted);white-space:nowrap;}
-.internship-desc{color:var(--ink-soft);font-size:14px;margin:12px 0 16px;}
+/* ---------- Internships & Highlights ---------- */
+/* Label introducing a block inside a section (e.g. workshops under Highlights). */
+.subsection-label{
+  font-size:12.5px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;
+  color:var(--accent);margin:64px 0 24px;
+}
+
+/* ---------- Certifications ---------- */
+.cert-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
+.cert-card{overflow:hidden;}
+/* The whole card is the control that opens the full certificate. */
+.cert-button{
+  display:flex;flex-direction:column;width:100%;text-align:left;
+  background:none;border:none;padding:0;color:inherit;
+}
+.cert-thumb{
+  display:block;background:var(--paper);border-bottom:1px solid var(--border);
+  aspect-ratio:4/3;overflow:hidden;
+}
+.cert-thumb img{
+  width:100%;height:100%;object-fit:cover;object-position:top center;
+  transition:transform .25s ease;
+}
+.cert-button:hover .cert-thumb img{transform:scale(1.03);}
+.cert-button:focus-visible{outline:2px solid var(--accent);outline-offset:2px;}
+.cert-body{display:flex;flex-direction:column;gap:8px;padding:20px 22px 22px;}
+.cert-issuer{
+  font-family:'DM Sans',sans-serif;font-size:11.5px;font-weight:600;
+  letter-spacing:.08em;text-transform:uppercase;color:var(--accent);
+}
+.cert-title{font-family:'Cormorant Garamond',serif;font-size:19px;font-weight:600;line-height:1.35;}
+.cert-date{font-size:14px;color:var(--muted);}
+
+/* ---------- Experience timeline ---------- */
+.timeline{position:relative;padding-left:34px;}
+.timeline::before{
+  content:'';position:absolute;left:8px;top:6px;bottom:6px;
+  width:1px;background:var(--border-strong);
+}
+.timeline-item{position:relative;padding-bottom:56px;}
+.timeline-item:last-child{padding-bottom:0;}
+/* Ring marker sitting on the line, centred on it at 8.5px. */
+.timeline-marker{
+  position:absolute;left:-34px;top:3px;width:17px;height:17px;border-radius:50%;
+  background:var(--paper);border:2px solid var(--accent);
+}
+.timeline-marker::after{content:'';position:absolute;inset:3px;border-radius:50%;background:var(--accent);}
+.timeline-meta{
+  font-family:'DM Sans',sans-serif;font-size:12px;letter-spacing:.06em;text-transform:uppercase;
+  color:var(--accent);margin-bottom:8px;display:flex;flex-wrap:wrap;align-items:center;
+}
+.timeline-meta .sep{color:var(--border-strong);}
+.timeline-title{font-size:21px;font-weight:600;margin-bottom:10px;line-height:1.3;}
+.timeline-desc{color:var(--ink-soft);font-size:15px;}
+.timeline-points{list-style:none;margin:14px 0 0;padding:0;display:flex;flex-direction:column;gap:8px;}
+.timeline-points li{position:relative;padding-left:24px;color:var(--ink-soft);font-size:14.5px;}
+.timeline-points li::before{content:'→';position:absolute;left:0;top:0;color:var(--accent);}
+.timeline-tech{margin:18px 0 16px;}
 
 .achievements-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .achievement-card{overflow:hidden;}
 .achievement-photo{aspect-ratio:5/4;background:#F2EEE6;}
 .achievement-photo img{width:100%;height:100%;object-fit:cover;}
 .achievement-body{padding:18px 20px;}
-.achievement-year{font-family:'JetBrains Mono',monospace;font-size:11.5px;color:var(--muted);}
+.achievement-year{font-family:'DM Sans',sans-serif;font-size:11.5px;color:var(--muted);}
 .achievement-body h3{font-size:15.5px;margin:4px 0 6px;}
 .achievement-body p{font-size:13.5px;color:var(--muted);}
 
@@ -270,7 +353,10 @@ button{font-family:inherit;cursor:pointer;}
 .lightbox-inner{background:var(--paper-alt);border-radius:var(--radius);max-width:640px;width:100%;overflow:hidden;}
 .lightbox-head{display:flex;justify-content:space-between;align-items:center;padding:14px 18px;border-bottom:1px solid var(--border);}
 .lightbox-close{background:none;border:none;font-size:18px;color:var(--muted);}
-.lightbox-inner img{width:100%;}
+.lightbox-inner img,
+.lightbox-inner video{width:100%;display:block;background:#000;}
+.lightbox-empty{padding:22px;font-size:14.5px;color:var(--ink-soft);}
+.lightbox-empty code{font-family:'DM Sans',sans-serif;font-size:12.5px;background:var(--paper);border:1px solid var(--border);border-radius:4px;padding:1px 5px;}
 
 /* ---------- Footer ---------- */
 .footer{padding:36px 0;border-top:1px solid var(--border);}
@@ -285,14 +371,17 @@ button{font-family:inherit;cursor:pointer;}
   .hero-grid{grid-template-columns:1fr;}
   .hero-photo-wrap{max-width:320px;margin:0 auto;}
   .project-card-inner{grid-template-columns:1fr;}
-  .internship-card{grid-template-columns:1fr;}
-  .internship-photo{aspect-ratio:16/9;}
-  .skills-grid{grid-template-columns:1fr;}
+  .about-grid{grid-template-columns:1fr;gap:44px;}
+  .skills-cards{grid-template-columns:repeat(2,1fr);}
+  .cert-grid{grid-template-columns:repeat(2,1fr);}
   .tracking-grid{grid-template-columns:1fr;}
   .achievements-grid{grid-template-columns:1fr 1fr;}
 }
 @media (max-width:600px){
-  .hero h1{font-size:42px;}
+  .skills-cards{grid-template-columns:1fr;}
+  .cert-grid{grid-template-columns:1fr;}
+  .timeline{padding-left:26px;}
+  .timeline-marker{left:-24px;width:13px;height:13px;}
   .stats-grid{grid-template-columns:1fr 1fr;}
   .achievements-grid{grid-template-columns:1fr;}
   .section{padding:64px 0;}

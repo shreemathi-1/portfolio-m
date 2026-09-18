@@ -10,7 +10,7 @@ export default function Contact() {
     <section className="section" id="contact">
       <div className="container">
         <SectionReveal className="section-head">
-          <p className="section-eyebrow"><span className="num">07</span> Contact</p>
+          <p className="section-eyebrow"><span className="num">08</span> Contact</p>
         </SectionReveal>
 
         <SectionReveal className="card contact-card">

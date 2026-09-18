@@ -2,7 +2,10 @@ import { useState } from 'react'
 import SectionReveal from './SectionReveal'
 import Seal from './Seal'
 import { skillGroups } from '../data/portfolioData'
-import { FiX } from 'react-icons/fi'
+import { FiX, FiEye } from 'react-icons/fi'
+
+// Proof files are plain paths, so the extension decides how to render them.
+const isVideo = (src) => /\.(mp4|webm|mov|ogv)$/i.test(src || '')
 
 export default function Skills() {
   const [proof, setProof] = useState(null)
@@ -11,33 +14,31 @@ export default function Skills() {
     <section className="section" id="skills">
       <div className="container">
         <SectionReveal className="section-head">
-          <p className="section-eyebrow"><span className="num">02</span> Skills</p>
-          <h2>What I work with</h2>
-          <p>Proficiency is self-rated. Where I have a certificate or project to back a skill, you can open it directly.</p>
+          <p className="section-eyebrow"><span className="num">02</span> Technical expertise</p>
+          <h2>Skills &amp; Technologies</h2>
+          <p>Every skill has a “View POC” button — it opens the proof behind that skill, whether that is a screenshot, a certificate or a short clip.</p>
         </SectionReveal>
 
-        <div className="skills-grid">
+        <div className="skills-cards">
           {skillGroups.map((group) => (
-            <SectionReveal key={group.category} className="card skill-group">
-              <h3>{group.category}</h3>
-              {group.skills.map((s) => (
-                <div className="skill-row" key={s.name}>
-                  <div className="skill-row-top">
-                    <span className="name">
-                      {s.name}
-                      {s.proof && (
-                        <button className="proof-link" onClick={() => setProof({ name: s.name, src: s.proof })}>
-                          view proof
-                        </button>
-                      )}
-                    </span>
-                    <span className="pct">{s.level}%</span>
+            <SectionReveal key={group.category} className="card skill-card">
+              <span className="skill-card-icon" aria-hidden="true">{group.icon}</span>
+              <h3 className="skill-card-title">{group.category}</h3>
+              <div className="skill-list">
+                {group.skills.map((s) => (
+                  <div className="skill-line" key={s.name}>
+                    <span className="skill-line-name">{s.name}</span>
+                    <button
+                      type="button"
+                      className="poc-btn"
+                      onClick={() => setProof({ name: s.name, src: s.proof })}
+                      aria-label={`View POC for ${s.name}`}
+                    >
+                      <FiEye aria-hidden="true" /> View POC
+                    </button>
                   </div>
-                  <div className="skill-bar-track">
-                    <div className="skill-bar-fill" style={{ width: `${s.level}%` }} />
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </SectionReveal>
           ))}
         </div>
@@ -52,7 +53,17 @@ export default function Skills() {
                 <FiX />
               </button>
             </div>
-            <img src={proof.src} alt={`Proof for ${proof.name}`} />
+            {!proof.src ? (
+              <p className="lightbox-empty">
+                No proof uploaded for {proof.name} yet. Add a screenshot, certificate or short
+                clip to <code>/public/assets</code> and point this skill at it in{' '}
+                <code>portfolioData.js</code>.
+              </p>
+            ) : isVideo(proof.src) ? (
+              <video src={proof.src} controls autoPlay playsInline />
+            ) : (
+              <img src={proof.src} alt={`Proof for ${proof.name}`} />
+            )}
           </div>
         </div>
       )}

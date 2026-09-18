@@ -1,11 +1,12 @@
 import Navbar from './components/Navbar'
 import Hero from './components/Hero'
-import StatsBar from './components/StatsBar'
+// import StatsBar from './components/StatsBar'
 import About from './components/About'
 import Skills from './components/Skills'
 import Projects from './components/Projects'
 import Internships from './components/Internships'
-import Achievements from './components/Achievements'
+import Certifications from './components/Certifications'
+import Highlights from './components/Highlights'
 import Tracking from './components/Tracking'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
@@ -15,12 +16,13 @@ export default function App() {
     <>
       <Navbar />
       <Hero />
-      <StatsBar />
+      {/* <StatsBar /> */}
       <About />
       <Skills />
       <Projects />
       <Internships />
-      <Achievements />
+      <Certifications />
+      <Highlights />
       <Tracking />
       <Contact />
       <Footer />
