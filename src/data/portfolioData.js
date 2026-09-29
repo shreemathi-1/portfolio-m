@@ -19,7 +19,7 @@ export const profile = {
     "I build clean, functional web applications and back every claim on this page with a screenshot, a certificate, or a working link.",
   location: "Coimbatore, Tamil Nadu, India",
   photo: "/assets/profile.png",
-  resumeFile: "/assets/Ananya_Rao_Resume.pdf",
+  resumeFile: "/assets/shreemathi_Resume.pdf",
   about: [
     " I’m a Computer Science Engineering student specializing in Cyber Security, with a strong interest in building practical software that solves real problems.",
     "I enjoy working across the stack—from designing responsive interfaces and developing backend APIs to integrating databases, authentication, and AI-powered features. My projects have taken me from full-stack web applications and security tools to RAG-based chatbots and developer-focused AI solutions, giving me hands-on experience beyond classroom concepts.",
@@ -27,7 +27,7 @@ export const profile = {
   ],
   socials: {
     github: "https://github.com/shreemathi-1",
-    leetcode: "",
+    leetcode: "https://leetcode.com/u/shree_mathi_/",
     linkedin: "https://www.linkedin.com/in/shree-mathi-k-3456kk/",
     email: "shreemathik005@gmail.com",
     phone: "+91 8610482429",
@@ -209,7 +209,7 @@ export const projects = [
   //   description:
   //     "A Python CLI tool storing tasks in a local SQLite file, with fuzzy search and colour-coded priority levels. Packaged and published to TestPyPI as a learning exercise.",
   //   tech: ["Python", "SQLite", "Click"],
-  //   github: "https://github.com/ananyarao/taskflow-cli",
+  //   github: "https://github.com/shreemathi/taskflow-cli",
   //   live: "",
   //   video: "",
   //   screenshots: ["/assets/placeholders/project-placeholder.svg"],
@@ -266,7 +266,7 @@ export const certifications = [
     title: "Artificial intelligence",
     issuer: "Elewayte",
     date: "April - May 2024",
-    image: "/assets/placeholders/certificate-placeholder.svg",
+    image: "/assets/certifications/artificial_intelligence.pdf",
   },
   {
     id: "cert-2",
@@ -289,13 +289,13 @@ export const certifications = [
     date: "Jun 2026",
     image: "/assets/placeholders/certificate-placeholder.svg",
   },
-  // {
-  //   id: "cert-5",
-  //   title: "Git & GitHub Fundamentals",
-  //   issuer: "Sample Academy",
-  //   date: "May 2024",
-  //   image: "/assets/placeholders/certificate-placeholder.svg",
-  // },
+  {
+    id: "cert-5",
+    title: "Frontend Development - HTML",
+    issuer: "Great Learning",
+    date: "April 2024",
+    image: "/assets/certifications/frontend_GL.jpg",
+  },
   // {
   //   id: "cert-6",
   //   title: "SQL for Data Analysis",

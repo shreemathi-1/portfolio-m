@@ -33,7 +33,7 @@ portfolio-react/
 ├── vite.config.js
 ├── public/
 │   └── assets/
-│       ├── Ananya_Rao_Resume.pdf       ← placeholder, replace with your resume
+│       ├── shreemathi_Resume.pdf       ← placeholder, replace with your resume
 │       └── placeholders/               ← generic placeholder images used everywhere
 ├── src/
 │   ├── main.jsx
@@ -73,7 +73,7 @@ then point to them from `portfolioData.js` as `/assets/your-file.jpg`.
 The placeholder SVGs in `public/assets/placeholders/` are there so the site
 looks complete before you add anything — replace them at your own pace.
 
-Replace `public/assets/Ananya_Rao_Resume.pdf` with your actual resume
+Replace `public/assets/shreemathi.pdf` with your actual resume
 (same filename, or update `profile.resumeFile` in the data file).
 
 ## 3. Run locally
