@@ -6,67 +6,72 @@
 // ─────────────────────────────────────────────────────────────
 
 export const profile = {
-  name: "Ananya Rao",
+  name: "Shree Mathi K",
   role: "Software Developer — Fresher",
   // Shown as the dot-separated line above the name in the hero.
-  roles: ["Software Developer", "Full-Stack Enthusiast", "Web Developer"],
+  roles: [
+    "Software Developer",
+    "Full-Stack Enthusiast",
+    "Web Developer",
+    "AI Enthusiast",
+  ],
   tagline:
     "I build clean, functional web applications and back every claim on this page with a screenshot, a certificate, or a working link.",
-  location: "Bengaluru, India",
-  photo: "/assets/placeholders/profile-circle-placeholder.svg",
+  location: "Coimbatore, Tamil Nadu, India",
+  photo: "/assets/profile.png",
   resumeFile: "/assets/Ananya_Rao_Resume.pdf",
   about: [
-    "I'm a final-year Computer Science graduate who enjoys turning ideas into working products — from the database schema to the pixel on screen.",
-    "Over the last two years I've shipped 15+ personal and academic projects, completed two internships, and picked up a working comfort across the MERN stack, Python, and cloud basics.",
-    "I care about writing code that's easy to read a year later, and about proving what I say I can do — every project, skill and internship below links to real evidence.",
+    " I’m a Computer Science Engineering student specializing in Cyber Security, with a strong interest in building practical software that solves real problems.",
+    "I enjoy working across the stack—from designing responsive interfaces and developing backend APIs to integrating databases, authentication, and AI-powered features. My projects have taken me from full-stack web applications and security tools to RAG-based chatbots and developer-focused AI solutions, giving me hands-on experience beyond classroom concepts.",
+    "I’m particularly interested in Java, Full Stack Development, AI/LLM applications, and problem solving. I like understanding how things work under the hood, turning an idea into a working product, and continuously improving the implementation rather than stopping at a basic prototype.",
   ],
   socials: {
-    github: "https://github.com/ananyarao",
-    leetcode: "https://leetcode.com/ananyarao",
-    linkedin: "https://linkedin.com/in/ananyarao",
-    email: "ananya.rao@example.com",
-    phone: "+91 90000 00000",
+    github: "https://github.com/shreemathi-1",
+    leetcode: "",
+    linkedin: "https://www.linkedin.com/in/shree-mathi-k-3456kk/",
+    email: "shreemathik005@gmail.com",
+    phone: "+91 8610482429",
   },
 };
 
 // The chip row under "Core Expertise" in the hero. "tone" picks the dot colour
 // from the theme tokens — accent | ink | highlight | muted.
 export const coreExpertise = [
-  { name: "React", tone: "accent" },
+  { name: "Java", tone: "accent" },
+  { name: "MySQL", tone: "accent" },
   { name: "JavaScript", tone: "ink" },
+  { name: "React", tone: "accent" },
   { name: "Node.js", tone: "accent" },
   { name: "Python", tone: "highlight" },
-  { name: "MongoDB", tone: "accent" },
   { name: "Tailwind CSS", tone: "ink" },
+  { name: "React Native", tone: "ink" },
   { name: "Git & GitHub", tone: "muted" },
   { name: "REST APIs", tone: "highlight" },
 ];
 
-
 // The three areas the About section highlights, each with an icon tile.
 export const focusAreas = [
   { icon: "🧩", label: "Full-Stack Web Development" },
-  { icon: "⚡", label: "Performance & Clean Code" },
-  { icon: "☁️", label: "Cloud & DevOps Fundamentals" },
+  { icon: "⚡", label: "AI Enthusiast" },
+  { icon: "☁️", label: "Mobile application development" },
 ];
 
 // Shown as the Education column beside the About text.
 export const education = [
   {
     id: "edu-1",
-    degree: "B.E. Computer Science & Engineering",
-    institution: "Sample Institute of Technology",
-    years: "2022–2026",
-    score: "CGPA: 8.6",
+    degree: "B.E. Computer Science & Engineering(Cyber Security)",
+    institution: "Dr.NGP Institute of Technology",
+    years: "2023–2027",
+    score: "CGPA: 8.71",
   },
   {
     id: "edu-2",
     degree: "Higher Secondary Certificate (HSC)",
-    institution: "Sample Higher  School",
-    years: "2021–2022",
-    score: "91%",
+    institution: "Lourde Matha Convent Matric Higher Secondary School",
+    years: "2022–2023",
+    score: "82.5%",
   },
- 
 ];
 
 // Skills grouped by category. Each group gets an icon for its card.
@@ -75,55 +80,61 @@ export const education = [
 // nothing is uploaded yet.
 export const skillGroups = [
   {
-    category: "Programming Languages",
-    icon: "💻",
+    category: "💻 Programming Languages",
     skills: [
-      { name: "JavaScript", proof: null },
-      { name: "Python", proof: null },
       { name: "Java", proof: null },
-      { name: "SQL", proof: null },
+      { name: "Python", proof: null },
     ],
   },
   {
-    category: "Frontend",
-    icon: "🎨",
+    category: "🎨 Frontend",
     skills: [
-      { name: "React", proof: "/assets/placeholders/certificate-placeholder.svg" },
       { name: "HTML / CSS", proof: null },
-      { name: "Tailwind CSS", proof: null },
-      { name: "Redux", proof: null },
+      { name: "JavaScript", proof: null },
+      {
+        name: "React",
+        proof: "/assets/placeholders/certificate-placeholder.svg",
+      },
+      // { name: "Redux", proof: null },
     ],
   },
   {
-    category: "Backend & APIs",
-    icon: "⚙️",
+    category: "⚙️ Backend & APIs",
     skills: [
+      { name: "SpringBoot", proof: null },
       { name: "Node.js / Express", proof: null },
       { name: "REST APIs", proof: null },
     ],
   },
   {
-    category: "Databases",
-    icon: "🗄️",
+    category: "🗄️ Databases & Cloud",
     skills: [
-      { name: "MongoDB", proof: null },
+      { name: "MySQL", proof: null },
       { name: "PostgreSQL", proof: null },
+      {
+        name: "AWS (basics)",
+        proof: "/assets/placeholders/certificate-placeholder.svg",
+      },
     ],
   },
   {
-    category: "Tools & Workflow",
-    icon: "🛠️",
+    category: " 🛠️ Tools & Workflow",
     skills: [
       { name: "Git & GitHub", proof: null },
       { name: "Figma", proof: null },
+      { name: "PostMan", proof: null },
+      { name: "Vercel", proof: null },
+      { name: "Render", proof: null },
+      { name: "Docker (basics)", proof: null },
     ],
   },
   {
-    category: "Cloud & DevOps",
-    icon: "☁️",
+    category: "🤖 AI Skills",
     skills: [
-      { name: "Docker (basics)", proof: null },
-      { name: "AWS (basics)", proof: "/assets/placeholders/certificate-placeholder.svg" },
+      { name: "RAG", proof: null },
+      { name: "Agents & skills", proof: null },
+      { name: "Agent harness", proof: null },
+      { name: "Agent-based development", proof: null },
     ],
   },
 ];
@@ -131,15 +142,21 @@ export const skillGroups = [
 // Each project can include a gallery of screenshots and/or a demo video.
 export const projects = [
   {
-    id: "campus-connect",
-    name: "CampusConnect",
-    tagline: "A student club & event management platform used by 6 campus clubs.",
-    description:
-      "Full-stack MERN app where club leads post events, manage RSVPs and share resources. Includes role-based auth, email reminders, and an admin dashboard with attendance analytics.",
-    tech: ["React", "Node.js", "MongoDB", "Express", "JWT"],
-  
-    github: "https://github.com/ananyarao/campus-connect",
-    live: "https://campus-connect-demo.vercel.app",
+    id: "Pre-Prompt Sensitive Data Protection System",
+    name: "Pre-Prompt Sensitive Data Protection System WebApp",
+    tagline:
+      "A Web Application and also a VS Code Plugin to detect and mask sensitive data",
+    description: [
+      "Developed a pre-prompt security checker where users enter prompts intended for AI chatbots, ",
+      "which are scanned for sensitive information such as email addresses, phone numbers, API keys,",
+      "and IP addresses using pattern matching and predefined security rules.",
+      "Implemented optional data masking, allowing users to mask detected sensitive information before",
+      "copying or using the sanitized prompt in an AI chatbot.",
+    ],
+    tech: ["React", " Node.js", "Express.js", "PostgresSQL"],
+
+    github: "",
+    // live: "",
     video: "",
     screenshots: [
       "/assets/placeholders/project-placeholder.svg",
@@ -148,15 +165,19 @@ export const projects = [
     ],
   },
   {
-    id: "spendwise",
-    name: "SpendWise",
-    tagline: "A personal expense tracker with simple spend forecasting.",
-    description:
-      "Tracks monthly expenses by category and predicts next month's spend using a linear-regression model trained on the user's own history. Built to practice data-driven UI decisions.",
-    tech: ["React", "Flask", "SQLite", "scikit-learn"],
-    
-    github: "https://github.com/ananyarao/spendwise",
-    live: "https://spendwise-demo.onrender.com",
+    id: "GitHub Repository Analyzer",
+    name: "GitHub Repository Analyzer WebApp",
+    tagline: "A WebApp that analyzes and give insights about repositories",
+    description: [
+      "Developed an AI-powered application that analyzes GitHub repositories and generates project",
+      "architecture insights to help developers understand unfamiliar codebases faster.",
+      "Built an interactive repository structure visualization with AI-generated explanations for folders and",
+      "files, technology stack and project summary.",
+    ],
+    tech: ["React", "NodeJS", "ExpressJS", "Gemini API", "GitHub API", "Vercel"],
+
+    github: "",
+    // live: "https://spendwise-demo.onrender.com",
     video: "",
     screenshots: [
       "/assets/placeholders/project-placeholder.svg",
@@ -164,29 +185,35 @@ export const projects = [
     ],
   },
   {
-    id: "recipe-radar",
-    name: "RecipeRadar",
+    id: "RAG-Based College Q&A Assisstant",
+    name: "Website-Integrated RAG-Based College Q&A assisstant",
     tagline: "Search recipes by the ingredients already in your fridge.",
     description:
-      "Consumes a public recipes API, ranks results by how many ingredients you already have, and lets you save favourites locally. Focus project for learning custom React hooks.",
-    tech: ["React", "REST API", "Tailwind CSS"],
-    github: "https://github.com/ananyarao/recipe-radar",
-    live: "https://recipe-radar-demo.vercel.app",
+     [
+      "Developed a source-grounded RAG chatbot for a college website that answers academic, examination,",
+"and admissions queries from official institutional documents with easy knowledge-base updates -",
+"new PDFs/documents can be ingested via a single script without code changes.",
+"Built a full retrieval pipeline with local embedding generation, vector search, and LLM-based answer",
+"synthesis, along with a REST API backend and an embeddable chat widget.",
+     ],
+    tech: ["Python", "FastAPI", "ChromaDB", "Sentence-Transformers", "Groq API"],
+    github: "",
+    // live: "https://recipe-radar-demo.vercel.app",
     video: "",
     screenshots: ["/assets/placeholders/project-placeholder.svg"],
   },
-  {
-    id: "taskflow-cli",
-    name: "TaskFlow CLI",
-    tagline: "A command-line task manager with tags, due dates and reminders.",
-    description:
-      "A Python CLI tool storing tasks in a local SQLite file, with fuzzy search and colour-coded priority levels. Packaged and published to TestPyPI as a learning exercise.",
-    tech: ["Python", "SQLite", "Click"],
-    github: "https://github.com/ananyarao/taskflow-cli",
-    live: "",
-    video: "",
-    screenshots: ["/assets/placeholders/project-placeholder.svg"],
-  },
+  // {
+  //   id: "taskflow-cli",
+  //   name: "TaskFlow CLI",
+  //   tagline: "A command-line task manager with tags, due dates and reminders.",
+  //   description:
+  //     "A Python CLI tool storing tasks in a local SQLite file, with fuzzy search and colour-coded priority levels. Packaged and published to TestPyPI as a learning exercise.",
+  //   tech: ["Python", "SQLite", "Click"],
+  //   github: "https://github.com/ananyarao/taskflow-cli",
+  //   live: "",
+  //   video: "",
+  //   screenshots: ["/assets/placeholders/project-placeholder.svg"],
+  // },
 ];
 
 // Rendered as the Experience timeline. "highlights" are the arrow bullets;
@@ -194,11 +221,11 @@ export const projects = [
 export const internships = [
   {
     id: "internship-1",
-    company: "NimbusTech Solutions",
-    role: "Frontend Developer Intern",
-    duration: "May 2025 – Jul 2025",
-    length: "3 months",
-    location: "Bengaluru, India",
+    company: "Tamil Nadu Government Cyber Crime Wing – Chennai",
+    role: "Web Developer Intern",
+    duration: "Jun 2025 – Jul 2025",
+    length: "1 month",
+    location: "Chennai, India",
     photo: "/assets/placeholders/photo-placeholder.svg",
     certificate: "/assets/placeholders/certificate-placeholder.svg",
     description:
@@ -212,11 +239,11 @@ export const internships = [
   },
   {
     id: "internship-2",
-    company: "Verve Analytics",
-    role: "Data & Backend Intern",
-    duration: "Dec 2024 – Feb 2025",
-    length: "3 months",
-    location: "Remote",
+    company: "Hackup Technologies",
+    role: "Web Testing Intern",
+    duration: "Jun 2025",
+    length: "15 days",
+    location: "Hybrid - Coimbatore",
     photo: "/assets/placeholders/photo-placeholder.svg",
     certificate: "/assets/placeholders/certificate-placeholder.svg",
     description:
@@ -236,70 +263,73 @@ export const internships = [
 export const certifications = [
   {
     id: "cert-1",
-    title: "Responsive Web Design",
-    issuer: "freeCodeCamp",
-    date: "March 2025",
+    title: "Artificial intelligence",
+    issuer: "Elewayte",
+    date: "April - May 2024",
     image: "/assets/placeholders/certificate-placeholder.svg",
   },
   {
     id: "cert-2",
-    title: "React — The Complete Guide",
-    issuer: "Udemy",
-    date: "January 2025",
+    title: "HTML Essential Training",
+    issuer: "LinkedIn Learning",
+    date: "May 2026",
     image: "/assets/placeholders/certificate-placeholder.svg",
   },
   {
     id: "cert-3",
-    title: "Python for Everybody",
-    issuer: "Coursera",
-    date: "November 2024",
+    title: "MySQL Essential Training",
+    issuer: "LinkedIn Learning",
+    date: "Jun 2026",
     image: "/assets/placeholders/certificate-placeholder.svg",
   },
   {
     id: "cert-4",
-    title: "AWS Cloud Practitioner Essentials",
-    issuer: "AWS Skill Builder",
-    date: "August 2024",
+    title: "Learning Git and Githu",
+    issuer: "LinkedIn Learning",
+    date: "Jun 2026",
     image: "/assets/placeholders/certificate-placeholder.svg",
   },
-  {
-    id: "cert-5",
-    title: "Git & GitHub Fundamentals",
-    issuer: "Sample Academy",
-    date: "May 2024",
-    image: "/assets/placeholders/certificate-placeholder.svg",
-  },
-  {
-    id: "cert-6",
-    title: "SQL for Data Analysis",
-    issuer: "Sample Academy",
-    date: "February 2024",
-    image: "/assets/placeholders/certificate-placeholder.svg",
-  },
+  // {
+  //   id: "cert-5",
+  //   title: "Git & GitHub Fundamentals",
+  //   issuer: "Sample Academy",
+  //   date: "May 2024",
+  //   image: "/assets/placeholders/certificate-placeholder.svg",
+  // },
+  // {
+  //   id: "cert-6",
+  //   title: "SQL for Data Analysis",
+  //   issuer: "Sample Academy",
+  //   date: "February 2024",
+  //   image: "/assets/placeholders/certificate-placeholder.svg",
+  // },
 ];
 
 export const achievements = [
   {
     id: "ach-1",
-    title: "Smart India Hackathon — Finalist",
-    year: "2025",
+    title: "Unisys UIP Project Ideathon — Finalist",
+    year: "2026",
     photo: "/assets/placeholders/achievement-placeholder.svg",
-    description: "Team of 4 selected among top 30 nationally out of 900+ teams for a civic-tech proposal.",
+    description:
+      "Team of 4 selected among top 50 nationally out of 1000+ teams for a Project Innovation Ideathon Challenge ",
   },
   {
     id: "ach-2",
-    title: "College Coding Championship — 1st Place",
+    title: "College Debugging Competition” — 1st Place",
     year: "2024",
     photo: "/assets/placeholders/achievement-placeholder.svg",
-    description: "Won the annual inter-department competitive programming contest, 120 participants.",
+    description:
+      "Won the annual inter-department competitive Capture The Flag contest.",
   },
-  {
-    id: "ach-3",
-    title: "Open-source contributor",
-    year: "2024",
-    photo: "/assets/placeholders/achievement-placeholder.svg",
-    description: "Merged 5 accepted pull requests to a mid-size open-source React UI library.",
-  },
+  // {
+  //   id: "ach-3",
+  //   title: "Open-source contributor",
+  //   year: "2024",
+  //   photo: "/assets/placeholders/achievement-placeholder.svg",
+  //   description:
+  //     "Merged 5 accepted pull requests to a mid-size open-source React UI library.",
+  // },
 ];
 
 // Used to embed the free, public GitHub / LeetCode stat-card services.
@@ -333,8 +363,8 @@ export const workshops = [
 ];
 
 export const tracking = {
-  githubUsername: "ananyarao",
-  leetcodeUsername: "ananyarao",
+  githubUsername: "shreemathi-1",
+  leetcodeUsername: "shree_mathi_",
 };
 
 export const contact = {
