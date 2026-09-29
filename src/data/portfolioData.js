@@ -226,16 +226,18 @@ export const internships = [
     duration: "Jun 2025 – Jul 2025",
     length: "1 month",
     location: "Chennai, India",
-    photo: "/assets/placeholders/photo-placeholder.svg",
-    certificate: "/assets/placeholders/certificate-placeholder.svg",
+    photo: "/assets/internships/web_deve_intern.jpeg",
+    certificate: "/assets/internships/web_deve_Intern.jpeg",
     description:
-      "Three months on the product team, working across the client-facing dashboard and the shared component library.",
+    [
+      "Developed a role-based Daily Situation Report (DSR) web app for managing cybercrime reports across",
+      "multiple police stations using ReactJS, Postgres, Supabase, and RESTful APIs.",
+  ],
     highlights: [
-      "Rebuilt the client dashboard in React, cutting first-load time by 40% through code-splitting and lazy-loaded routes",
-      "Paired with two senior engineers on a component library adopted across three product teams",
-      "Documented every shared component in Storybook with typed props",
+      "Developed a role-based Daily Situation Report (DSR) web app for managing cybercrime reports across",
+"multiple police stations using ReactJS, Postgres, Supabase, OAuth authentication and RESTful APIs.",
     ],
-    tech: ["React", "TypeScript", "Storybook"],
+    tech: ["React", "Javascript", "Nodejs"],
   },
   {
     id: "internship-2",
@@ -244,10 +246,13 @@ export const internships = [
     duration: "Jun 2025",
     length: "15 days",
     location: "Hybrid - Coimbatore",
-    photo: "/assets/placeholders/photo-placeholder.svg",
-    certificate: "/assets/placeholders/certificate-placeholder.svg",
+    photo: "/assets/internships/testing_intern.jpeg",
+    certificate: "/assets/internships/testing_intern.jpeg",
     description:
-      "A backend-leaning internship on the internal reporting stack used by the analytics team.",
+    [
+      "Learned the fundamentals of web application security testing and vulnerability assessments using",
+"Nmap, Wireshark and BurpSuite.",
+    ],
     highlights: [
       "Built internal REST APIs for a reporting tool used by 5 analysts daily",
       "Wrote data-cleaning scripts that reduced manual spreadsheet work by roughly 6 hours a week",
@@ -280,7 +285,7 @@ export const certifications = [
     title: "MySQL Essential Training",
     issuer: "LinkedIn Learning",
     date: "Jun 2026",
-    image: "/assets/placeholders/certificate-placeholder.svg",
+    image: "/assets/",
   },
   {
     id: "cert-4",
