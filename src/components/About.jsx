@@ -6,7 +6,7 @@ export default function About() {
     <section className="section" id="about">
       <div className="container">
         <SectionReveal className="section-head">
-          <p className="section-eyebrow"><span className="num">01</span> About me</p>
+          <p className="section-eyebrow">About me</p>
           <h2>Developer. Learner. Builder.</h2>
         </SectionReveal>
 

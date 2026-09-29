@@ -62,17 +62,11 @@ export const education = [
   {
     id: "edu-2",
     degree: "Higher Secondary Certificate (HSC)",
-    institution: "Sample Higher Secondary School",
+    institution: "Sample Higher  School",
     years: "2021–2022",
     score: "91%",
   },
-  {
-    id: "edu-3",
-    degree: "Secondary School Leaving Certificate (SSLC)",
-    institution: "Sample Vidya Mandir",
-    years: "2019–2020",
-    score: "94%",
-  },
+ 
 ];
 
 // Skills grouped by category. Each group gets an icon for its card.
@@ -143,7 +137,7 @@ export const projects = [
     description:
       "Full-stack MERN app where club leads post events, manage RSVPs and share resources. Includes role-based auth, email reminders, and an admin dashboard with attendance analytics.",
     tech: ["React", "Node.js", "MongoDB", "Express", "JWT"],
-    featured: true,
+  
     github: "https://github.com/ananyarao/campus-connect",
     live: "https://campus-connect-demo.vercel.app",
     video: "",
@@ -160,7 +154,7 @@ export const projects = [
     description:
       "Tracks monthly expenses by category and predicts next month's spend using a linear-regression model trained on the user's own history. Built to practice data-driven UI decisions.",
     tech: ["React", "Flask", "SQLite", "scikit-learn"],
-    featured: true,
+    
     github: "https://github.com/ananyarao/spendwise",
     live: "https://spendwise-demo.onrender.com",
     video: "",
@@ -176,7 +170,6 @@ export const projects = [
     description:
       "Consumes a public recipes API, ranks results by how many ingredients you already have, and lets you save favourites locally. Focus project for learning custom React hooks.",
     tech: ["React", "REST API", "Tailwind CSS"],
-    featured: false,
     github: "https://github.com/ananyarao/recipe-radar",
     live: "https://recipe-radar-demo.vercel.app",
     video: "",
@@ -189,7 +182,6 @@ export const projects = [
     description:
       "A Python CLI tool storing tasks in a local SQLite file, with fuzzy search and colour-coded priority levels. Packaged and published to TestPyPI as a learning exercise.",
     tech: ["Python", "SQLite", "Click"],
-    featured: false,
     github: "https://github.com/ananyarao/taskflow-cli",
     live: "",
     video: "",

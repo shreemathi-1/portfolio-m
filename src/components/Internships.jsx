@@ -11,7 +11,7 @@ export default function Internships() {
     <section className="section" id="experience">
       <div className="container">
         <SectionReveal className="section-head">
-          <p className="section-eyebrow"><span className="num">04</span> Professional Experience</p>
+          <p className="section-eyebrow">Professional Experience</p>
           <h2>Internships</h2>
         </SectionReveal>
 

@@ -2,17 +2,18 @@ import { useState } from 'react'
 import SectionReveal from './SectionReveal'
 import Seal from './Seal'
 import CredentialCard from './CredentialCard'
-import { achievements, workshops } from '../data/portfolioData'
+import { achievements, workshops, tracking } from '../data/portfolioData'
 import { FiX } from 'react-icons/fi'
 
 export default function Highlights() {
   const [open, setOpen] = useState(null)
+  const { githubUsername: gh, leetcodeUsername: lc } = tracking
 
   return (
     <section className="section" id="highlights">
       <div className="container">
         <SectionReveal className="section-head">
-          <p className="section-eyebrow"><span className="num">06</span> Highlights</p>
+          <p className="section-eyebrow">Highlights</p>
           <h2>Milestones along the way</h2>
         </SectionReveal>
 
@@ -45,6 +46,36 @@ export default function Highlights() {
               onOpen={() => setOpen(w)}
             />
           ))}
+        </div>
+
+        <SectionReveal className="subsection-label">Coding Activity</SectionReveal>
+
+        <div className="tracking-grid">
+          <SectionReveal className="card tracking-card">
+            <div className="tracking-card-head">
+              <h3>GitHub contributions</h3>
+              <Seal>Live</Seal>
+            </div>
+            <img
+              src={`https://ghchart.rshah.org/1C3D6E/${gh}`}
+              alt={`GitHub contribution heatmap for ${gh}`}
+              loading="lazy"
+            />
+            <p className="tracking-note">github.com/{gh}</p>
+          </SectionReveal>
+
+          <SectionReveal className="card tracking-card">
+            <div className="tracking-card-head">
+              <h3>LeetCode activity</h3>
+              <Seal>Live</Seal>
+            </div>
+            <img
+              src={`https://leetcard.jacoblin.cool/${lc}?theme=light&font=DM%20Sans&ext=heatmap`}
+              alt={`LeetCode activity heatmap for ${lc}`}
+              loading="lazy"
+            />
+            <p className="tracking-note">leetcode.com/{lc}</p>
+          </SectionReveal>
         </div>
       </div>
 

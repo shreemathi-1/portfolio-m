@@ -8,8 +8,7 @@ const LINKS = [
   { href: '#experience', label: 'Experience' },
   { href: '#certifications', label: 'Certifications' },
   { href: '#highlights', label: 'Highlights' },
-  { href: '#tracking', label: 'Tracking' },
-  { href: '#contact', label: 'Contact' },
+  { href: '#contact', label: 'Contact' },    
 ]
 
 export default function Navbar() {
@@ -27,7 +26,13 @@ export default function Navbar() {
               {l.label}
             </a>
           ))}
-          <a href={profile.resumeFile} download className="nav-cta" onClick={() => setOpen(false)}>
+          <a
+            href={profile.resumeFile}
+            target="_blank"
+            rel="noreferrer"
+            className="nav-cta"
+            onClick={() => setOpen(false)}
+          >
             Resume
           </a>
         </nav>

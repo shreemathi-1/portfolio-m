@@ -14,7 +14,7 @@ export default function Skills() {
     <section className="section" id="skills">
       <div className="container">
         <SectionReveal className="section-head">
-          <p className="section-eyebrow"><span className="num">02</span> Technical expertise</p>
+          <p className="section-eyebrow">Technical expertise</p>
           <h2>Skills &amp; Technologies</h2>
           <p>Every skill has a “View POC” button — it opens the proof behind that skill, whether that is a screenshot, a certificate or a short clip.</p>
         </SectionReveal>

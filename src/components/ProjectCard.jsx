@@ -34,7 +34,7 @@ export default function ProjectCard({ project }) {
         </div>
 
         <div className="project-body">
-          {project.featured && <span className="project-featured-tag">Featured</span>}
+          
           <h3>{project.name}</h3>
           <p className="project-tagline">{project.tagline}</p>
           <p className="project-desc">{project.description}</p>

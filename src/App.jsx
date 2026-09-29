@@ -7,7 +7,6 @@ import Projects from './components/Projects'
 import Internships from './components/Internships'
 import Certifications from './components/Certifications'
 import Highlights from './components/Highlights'
-import Tracking from './components/Tracking'
 import Contact from './components/Contact'
 import Footer from './components/Footer'
 
@@ -23,7 +22,6 @@ export default function App() {
       <Internships />
       <Certifications />
       <Highlights />
-      <Tracking />
       <Contact />
       <Footer />
     </>

@@ -12,7 +12,7 @@ export default function Certifications() {
     <section className="section" id="certifications">
       <div className="container">
         <SectionReveal className="section-head">
-          <p className="section-eyebrow"><span className="num">05</span> Credentials</p>
+          <p className="section-eyebrow">Credentials</p>
           <h2>Certifications</h2>
           <p>Each card is the certificate itself — click one to see it full size.</p>
         </SectionReveal>
