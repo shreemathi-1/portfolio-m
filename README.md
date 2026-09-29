@@ -1,4 +1,4 @@
-# Portfolio — React
+# Portfolio 
 
 A single-page developer portfolio built with React + Vite: about, skills with
 proof, projects with screenshot/video galleries, internships with photos and
