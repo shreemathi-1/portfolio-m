@@ -52,8 +52,12 @@ export default function Hero() {
           </div>
 
           <div className="hero-meta">
-            <span><FaGithub /> {profile.socials.github.replace('https://', '')}</span>
-            <span><SiLeetcode /> {profile.socials.leetcode.replace('https://', '')}</span>
+            <a href={profile.socials.github} target="_blank" rel="noreferrer">
+              <FaGithub /> {profile.socials.github.replace('https://', '')}
+            </a>
+            <a href={profile.socials.leetcode} target="_blank" rel="noreferrer">
+              <SiLeetcode /> {profile.socials.leetcode.replace('https://', '')}
+            </a>
           </div>
         </motion.div>
 
